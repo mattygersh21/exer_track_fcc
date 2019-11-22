@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise Tracker</title>
+    <meta name="description" content="health and fitness">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Were you active today?
+      </h1>
+    </header>
+
+    <main>
+      <p>If so, want to track that activity?</p>
+      <p>For returning users, all you have to do is enter your member ID and activity in the _____ fields. For new users, the only additional step is to enter a username... that's it! Then you're free to enter the member ID you recieve and your activity for the day, just like all the returning users.</p>
+      
+      <form id="new_user_form" action="/api/exercise/new-user" method="post">
+        <h2>
+          New users enter your name here!
+        </h2>
+        <input name="username" type="text" maxlength="100" placeholder="Your new username">
+        <input type="submit" value="Submit" id="submit-dream" />
+      </form>
+      
+      <form id="activity_entry_form" action="/api/exercise/add" method="post">
+        <h2>
+          Exercise tracking area
+        </h2>
+        <input name="UserId" type="text" placeholder="What is your User ID? (required)">
+        <input name="duration" type="text" placeholder="How long did you do it? (required)">
+        <input name="description" type="text" placeholder="What was your activity? (required)">
+        <input name="date" type="text" placeholder="User ID">
+        <input type="submit" value="Submit"/>
+      </form>
+    </main>
+
+  </body>
+</html>

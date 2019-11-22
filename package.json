@@ -1,0 +1,31 @@
+{
+  "name": "hello-express",
+  "version": "1.0.0",
+  "description": "Exercise Tracker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "cors": "^2.8.5",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.12",
+    "body-parser": "^1.19.0",
+    "custom-id": "^1.2.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/mattygersh21/exer-track-fcc"
+  },
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "exercise",
+    "tracking"
+  ]
+}
