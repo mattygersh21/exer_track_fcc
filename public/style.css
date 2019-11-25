@@ -20,9 +20,19 @@ h1 {
   font-weight: bold;
 }
 
+.row {
+  display: flex;
+  space-between: 10px;
+}
+
+.column {
+  flex: 50%;
+}
+
 p {
-  max-width: 600px;
+  max-width: 440px;
   color: #252627;
+  font-weight: 700;
 }
 
 #new_user_form {
@@ -32,7 +42,7 @@ p {
   color: #bfb48f;
   display: block;
   width: 100%;
-  max-width: 340px;
+  max-width: 440px;
   border-radius: 3px;
 }
 
@@ -43,7 +53,18 @@ p {
   color: #bfb48f;
   display: block;
   width: 100%;
-  max-width: 340px;
+  max-width: 440px;
+  border-radius: 3px;
+}
+
+#log_req_form {
+  margin-bottom: 25px;
+  padding: 1px 15px 15px 15px;
+  background-color: #564e58;
+  color: #bfb48f;
+  display: block;
+  width: 100%;
+  max-width: 440px;
   border-radius: 3px;
 }
 
