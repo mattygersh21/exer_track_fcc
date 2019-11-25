@@ -16,10 +16,6 @@ router.post('/add', (req, res, next) => {
   }
   activity.username = data.username;
   console.log(activity);
-  // activity.save((error, data) => {
-  //   data = data.toObject()
-  //   data._id = data.userId
-  //   });
   activity.save()
   console.log(activity);
   res.json({
