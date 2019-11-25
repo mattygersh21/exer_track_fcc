@@ -24,6 +24,8 @@ app.get("/", function(request, response) {
 
 app.use('/api/exercise', require('./controllers/addHandler'));
 app.use('/api/exercise', require('./controllers/getMembers'));
+app.use('/api/exercise', require('./controllers/addActivities'));
+app.use('/api/exercise', require('./controllers/getActivities'));
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT || 5000, function() {

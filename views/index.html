@@ -20,27 +20,52 @@
     </header>
 
     <main>
-      <p>If so, want to track that activity?</p>
-      <p>For returning users, all you have to do is enter your member ID and activity in the _____ fields. For new users, the only additional step is to enter a username... that's it! Then you're free to enter the member ID you recieve and your activity for the day, just like all the returning users.</p>
-      
-      <form id="new_user_form" action="/api/exercise/new-user" method="post">
-        <h2>
-          New users enter your name here!
-        </h2>
-        <input name="username" type="text" maxlength="100" placeholder="Your new username">
-        <input type="submit" value="Submit" id="submit-dream" />
-      </form>
-      
-      <form id="activity_entry_form" action="/api/exercise/add" method="post">
-        <h2>
-          Exercise tracking area
-        </h2>
-        <input name="UserId" type="text" placeholder="What is your User ID? (required)">
-        <input name="duration" type="text" placeholder="How long did you do it? (required)">
-        <input name="description" type="text" placeholder="What was your activity? (required)">
-        <input name="date" type="text" placeholder="User ID">
-        <input type="submit" value="Submit"/>
-      </form>
+      <div class="row">
+        <div id="paragraphs" class="column">
+          <p>
+            If so, want to track that activity?
+          </p>
+          <p>
+            For returning users, all you have to do is enter your Member ID and activity in the "Exercise tracking area" fields. For new users, the only additional step is to submit a username and retrieve your given Member ID... that's it! You'll receive your member ID when the page refreshes. Then you can navigate back to this page with the back button in your browser (ok... that's one more small step lol!) and add your activity for the day, just like all the returning users.
+          </p>
+          <p>
+            Remember your Member ID as you'll need it to keep all your exercise grouped together in the database. Then you'll be able to use our Exercise log request area, which you can see at the bottom of the page. After you've built up a log of activities, you can specify a span of dates that will allow you to see all the physical activity you've done (and logged with us!) for that period of time.
+          </p>
+        </div>
+
+        <div id="forms" class="column">
+          <form id="new_user_form" action="/api/exercise/new-user" method="post">
+            <h2>
+              New users enter your name here!
+            </h2>
+            <input name="username" type="text" maxlength="100" placeholder="Your new username">
+            <input type="submit" value="Submit" id="submit-dream" />
+          </form>
+
+          <form id="activity_entry_form" action="/api/exercise/add" method="post">
+            <h2>
+              Exercise tracking area
+            </h2>
+            <input name="userId" type="text" placeholder="What is your Member ID? (required)">
+            <input name="description" type="text" placeholder="What was your activity? (required)">
+            <input name="duration" type="text" placeholder="How long did you do it? (min) (required)">
+            <input name="date" type="text" placeholder="The date you did it? (yyyy-mm-dd) (today if left blank.)">
+            <input type="submit" value="Submit" />
+          </form>
+
+          <form id="log_req_form" action="/api/exercise/log" method="get">
+            <h2>
+              Exercise log request
+            </h2>
+            <input name="userId" type="text" placeholder="What is your Member ID? (requied)">
+            <input name="from" type="text" placeholder="Request activities from what date (yyyy-mm-dd)?">
+            <input name="to" type="text" placeholder="Request activities to what date (yyyy-mm-dd)?">
+            <input name="limit" type="text" placeholder="Limit request results to a number of entries? (integer)">
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+        
     </main>
 
   </body>
