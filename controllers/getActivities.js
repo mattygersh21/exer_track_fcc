@@ -6,14 +6,11 @@ const Activity = require('../models/activities');
 router.get('/log', (req, res, next) => {
   console.log("The /api/exercise/log route is connected.")
 
-
-// The query keyword must be used as the 
   const finalDate = new Date(req.query.to) == "Invalid Date" ? new Date() :  new Date(req.query.to);
   const beginDate = new Date(req.query.from) == "Invalid Date" ? new Date(0) : new Date(req.query.from);
-  console.log(beginDate);
   
   Member.findById(req.query.userId, (error, dataMember) => {
-//   This will be a query chain. Callback handled later in .exec
+//   This will be a query chain. Callback handled later in exec call
     Activity.find({
       userId: req.query.userId,
       date: {
